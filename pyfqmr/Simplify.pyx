@@ -137,7 +137,8 @@ cdef class Simplify :
                       lossless, threshold_lossless, preserve_border)
         t_end = _time()
         N_end = getFaces().size()
-        print('simplified mesh in {} seconds from {} to {} triangles'.format(round(t_end-t_start,4), N_start, N_end))
+        if verbose:
+            print('simplified mesh in {} seconds from {} to {} triangles'.format(round(t_end-t_start,4), N_start, N_end))
 
 
 cdef vector[vector[double]] setVerticesNogil(double[:,:] vertices, vector[vector[double]] vector_vertices )nogil:
